@@ -1,0 +1,57 @@
+@import "scssVariables";
+
+.sliderContainer{
+  padding: 0;
+}
+
+.sliderItem {
+  background:$yellowVar ;
+  padding: 50px;
+  p{
+    padding: 133px 0 25px 0;
+    color: #323334;
+    font-family: Roboto;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+  }
+  h2{
+    color: #A86A3D;
+    font-family: Roboto;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-bottom: 40px;
+    text-align: left;
+    span{
+      display: block;
+      text-align: center;
+    }
+  }
+  button{
+    display: block;
+    border: 1px solid var(--Page-color, #F3F6FF);
+    background: var(--Button, #4C8787);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 124px;
+    height: 50px;
+    margin-left: 13px;
+    color: white;
+  }
+  div:last-child{
+    padding-left: 70px;
+  }
+}
+
+
+
+.carousel .control-prev.control-arrow:before{
+  border-right: 8px solid black !important;
+}
+
+.carousel .control-next.control-arrow:before{
+  border-left: 8px solid black !important;
+}

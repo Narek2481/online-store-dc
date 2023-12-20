@@ -1,0 +1,36 @@
+.loginContainer{
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: center;
+  h2{
+    text-align: center;
+    padding: 20px 0;
+  }
+  label{
+    padding: 10px;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    input{
+      width: 300px;
+      padding: 15px 26px;
+      margin: 5px auto 0;
+
+    }
+  }
+  button{
+    margin: 0 auto;
+    color: white;
+    border: none;
+    padding: 20px;
+    width: 300px;
+    background:  #4C8787;
+  }
+  .error{
+    color: red;
+    padding: 5px 0;
+  }
+}

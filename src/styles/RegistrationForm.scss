@@ -1,0 +1,28 @@
+form{
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  h2{
+    text-align: center;
+  }
+  label{
+    text-align: center;
+  }
+  .error{
+    color: red;
+  }
+  input{
+    width: 300px;
+    padding: 15px 26px;
+  }
+  button{
+    margin: 0 auto;
+    color: white;
+    border: none;
+    padding: 20px;
+    width: 300px;
+    background:  #4C8787;
+  }
+}

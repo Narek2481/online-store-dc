@@ -1,0 +1,96 @@
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  h3 {
+    margin-bottom: 14px;
+    width: 100px;
+    text-align: left;
+    color: #323334;
+    font-family: Roboto,sans-serif;
+
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: lowercase;
+
+  }
+  img{
+    height: 300px;
+    max-width: 200px;
+  }
+  span {
+    margin-top: 20px;
+    display: block;
+    color: #323334;
+    font-family: Roboto,sans-serif;
+
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+//.rating:hover{
+//    background: #FFF;;
+//}
+
+.bedroom  {
+  //text-align: left;
+
+  bedroomSmall{
+    display: flex;
+    flex-direction: column;
+  }
+  h3 {
+    padding-top: 24px;
+    color: #323334;
+    font-family: Roboto,sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+  }
+
+  span {
+    margin-top: 20px;
+    display: block;
+    color: #323334;
+    font-family: Roboto,sans-serif;
+
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+.product{
+  cursor: pointer;
+  img{
+    height: 300px;
+    max-width: 300px;
+  }
+}
+
+.topRatingButton {
+  width: 273px;
+  height: 51px;
+  background: #4C8787;
+  color: #FFF;
+  font-family: Roboto,sans-serif;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  border: none;
+  display: block;
+  margin: 0 auto;
+
+}

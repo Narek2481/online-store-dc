@@ -1,0 +1,29 @@
+.productCategoryContainer{
+  padding: 73px;
+  display: flex;
+  gap: 100px;
+  .categoryTitle {
+    h3{
+      color: #323334;
+
+      font-family: Roboto,sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+  }
+  p{
+    padding-top: 14px;
+    cursor: pointer;
+  }
+  .bedroom{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+  }
+}
+//.nowCategory{
+//  text-align: center;
+//}

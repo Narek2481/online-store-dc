@@ -1,0 +1,20 @@
+.support {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  padding-bottom: 54px;
+  div{
+    gap:15px;
+    p{
+      color: rgba(0, 0, 0, 0.50);
+      font-family: Roboto,sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.36px;
+    }
+  }
+}

@@ -1,9 +1,11 @@
 import {createBrowserRouter, Navigate, Outlet} from "react-router-dom";
-import {Header} from "../components/Header";
-import {Footer} from "../components/Footer";
+import {Header} from "../components/layout/Header";
+import {Footer} from "../components/layout/Footer";
 import {Home} from "../pages/Home";
 import {Login} from "../pages/Login";
 import {Registration} from "../pages/Registration";
+import {Store} from "../pages/Store";
+import {ProductPage} from "../pages/ProductPage";
 
 
 export const router = createBrowserRouter([
@@ -32,6 +34,14 @@ export const router = createBrowserRouter([
             {
                 path:"registration",
                 element:<Registration/>
+            },
+            {
+                path:"store/:id",
+                element:<Store/>,
+            },
+            {
+                path:"store/:id/:productId",
+                element:<ProductPage/>
             }
         ]
     }

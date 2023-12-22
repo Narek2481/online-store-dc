@@ -1,5 +1,5 @@
-import "../styles/Login.scss"
-import {LoginForm} from "../components/LoginForm";
+import "../styles/login/Login.scss"
+import {LoginForm} from "../components/login/LoginForm";
 
 
 

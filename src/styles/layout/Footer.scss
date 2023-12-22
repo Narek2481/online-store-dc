@@ -1,0 +1,147 @@
+@import "../scssVariables";
+
+footer {
+  background: #050019;
+
+  .footerInfo {
+    background: $footerVar ;
+    color: $inFooterVar;
+    padding: 50px 74px;
+    display: flex;
+    gap: 130px;
+
+    p {
+      color: rgba(255, 255, 255, 0.50);
+    }
+  }
+
+  .registeredName {
+    padding: 16px;
+    color: $whiteVar;
+    text-align: center;
+    font-family: Roboto,sans-serif;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  a {
+    text-decoration: none;
+    color: $whiteVar;
+  }
+}
+
+.firstContainerInFooter {
+  width: 314px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  h2 {
+    color: $whiteVar;
+    font-family: Roboto,sans-serif;
+
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  p {
+    padding-bottom: 41px;
+    padding-top: 41px;
+    color: rgba(255, 255, 255, 0.50);
+    font-family: Roboto,sans-serif;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 137.5% */
+  }
+
+  a {
+    color: $whiteVar;
+    font-family: Roboto,sans-serif;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px; /* 137.5% */
+  }
+
+  .socialMedia {
+    gap: 72.61px;
+    padding-top: 55px;
+  }
+
+}
+
+.secondContainerInFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h3 {
+    padding-bottom: 34px;
+    color:  $whiteVar;
+    font-family: Roboto,sans-serif;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  p {
+    color: $whiteVar;
+    font-family: Roboto,sans-serif;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+}
+
+
+.lastContainerInFooter {
+  h2 {
+    color: $whiteVar;
+    font-family: Roboto,sans-serif;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-bottom: 25px;
+  }
+
+  span {
+    color: rgba(255, 255, 255, 0.50);
+    font-family: Roboto,sans-serif;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    padding-bottom: 15px;
+    span {
+      font-size: 24px;
+      padding-bottom: 0;
+    }
+
+  }
+  div{
+    margin-top: 33px;
+    padding-top: 34px;
+    border-top: 1px solid rgba(255, 255, 255, 0.50);
+  }
+  .comments{
+    margin-top: 9px;
+  }
+}

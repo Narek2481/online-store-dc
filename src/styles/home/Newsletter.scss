@@ -1,0 +1,51 @@
+.newsletter{
+  margin-top: 220px;
+  gap: 150px;
+  text-align: center;
+  justify-content: space-around;
+  max-width: 1440px;
+  padding-bottom: 110px;
+  padding-top: 20px;
+  h2{
+    color: #323334;
+    font-family: Roboto,sans-serif;
+
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  p{
+    color: #323334;
+    font-family: Roboto,sans-serif;
+
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    padding-top: 8px;
+  }
+  input{
+    width: 515px;
+    height: 50px;
+    flex-shrink: 0;
+    padding:15px 27px;
+    ::placeholder{
+      color: var(--FOOTER, #0A032A);
+      font-family: Roboto,sans-serif;
+
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-transform: capitalize;
+    }
+  }
+  button{
+    border: none;
+    background: #4C8787;
+    width: 85px;
+    height: 50px;
+  }
+}

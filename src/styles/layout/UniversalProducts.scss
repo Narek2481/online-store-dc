@@ -34,12 +34,9 @@
   }
 }
 
-//.rating:hover{
-//    background: #FFF;;
-//}
+
 
 .bedroom  {
-  //text-align: left;
 
   bedroomSmall{
     display: flex;
@@ -93,4 +90,19 @@
   display: block;
   margin: 0 auto;
 
+}
+
+
+
+
+.productForSlider{
+  text-align: center;
+  img{
+
+    margin: 0 auto;
+
+  }
+  div{
+    padding-top: 50px;
+  }
 }

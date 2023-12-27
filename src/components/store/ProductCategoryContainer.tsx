@@ -50,7 +50,7 @@ export const ProductCategoryContainer = () => {
                                  id,
                                  name,
                                  rating,
-                                 price
+                                 price, category
                              }) => (
                                 <UniversalProducts
                                     key={id}
@@ -59,12 +59,19 @@ export const ProductCategoryContainer = () => {
                                     where={"BEDROOM"}
                                     rating={rating}
                                     price={price}
+                                    categoryId={category._id}
+                                    id={id}
                                 />
                             ))
                     }
                 </div>
             </div>
-
+            <button
+                className="topRatingButton"
+                // onClick={handleLoadMore}
+                // style={{display: data?.length === topData?.length ? "none" : ""}}
+            >load more
+            </button>
         </>
     );
 };

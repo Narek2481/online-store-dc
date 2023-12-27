@@ -2,7 +2,8 @@ import {ErrorMessage, Field, Form, Formik} from "formik";
 import * as Yup from "yup";
 import {Link, useNavigate} from "react-router-dom";
 import {useLogin} from "../../common/hooks/useLogin";
-import {useAuth} from "../../common/hooks/useAuth";
+
+import {useAuthAtom} from "../../common/hooks/useAuthAtom";
 
 interface LoginFormComponent {
     email: string;
@@ -21,11 +22,11 @@ const initialValues = {
 
 export const LoginForm = () => {
     const navigate = useNavigate()
-    const {setToken} = useAuth()
+    const {setAuth} = useAuthAtom()
     const succcessLogin = (token:string) => {
         navigate("/home")
-        if (setToken){
-            setToken(token)
+        if (setAuth){
+            setAuth(token)
         }
     }
     const {mutate:login} = useLogin(succcessLogin)

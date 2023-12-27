@@ -1,0 +1,13 @@
+.orderHistory {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px;
+  .card{
+    padding: 20px;
+    justify-content: flex-start;
+    gap: 60px;
+  }
+}

@@ -1,6 +1,16 @@
 .topRating {
-  padding: 94px 74px ;
+  padding: 0px 72px 94px ;
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 24px;
+}
+
+.Rate{
+  padding: 94px 0 50px 74px;
+  color: #323334;
+  font-family: Roboto,sans-serif;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }

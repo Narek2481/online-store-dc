@@ -1,24 +1,23 @@
 import "../../styles/home/TopRating.scss"
 import {UniversalProducts} from "../layout/UniversalProducts";
-import {Fragment, useEffect, useState} from "react";
-import {useProducts} from "../../common/hooks/useProducts";
-import {IProduct} from "../../common/types/interfaces";
+import {Fragment, useState} from "react";
+import {useFeaturedCount} from "../../common/hooks/useFeaturedCount";
 
 
 export const TopRating = () => {
-    const {data} = useProducts()
-    const [topData, setTopData] = useState<IProduct[] | null>(null)
-    useEffect(() => {
-        if (data) {
-            setTopData(data.sort((prev, next) => +next.rating - (+prev.rating)))
-        }
-    }, [data]);
+    const [count, setCount] = useState(3)
+    const {data} = useFeaturedCount(count)
+
+   const handleLoadMore =  ()  => {
+       setCount(prevState => prevState+3)
+    }
 
     return (
         <>
+            <h2 className="Rate">TOP RATING</h2>
             <div className="topRating">
                 {
-                    !!topData && topData.map(elem => (
+                    !!data && data.map((elem:any) => (
                         <Fragment key={elem.id}>
                             <UniversalProducts
                                 rating={elem.rating}
@@ -26,7 +25,7 @@ export const TopRating = () => {
                                 img={elem.image}
                                 price={elem.price}
                                 where={"RATING"}
-                                categoryId={elem.category._id}
+                                categoryId={elem.category}
                                 id={elem.id}
                             />
 
@@ -34,7 +33,10 @@ export const TopRating = () => {
                     ))
                 }
             </div>
-            <button className="topRatingButton">load more</button>
+            <button
+                className="topRatingButton"
+                onClick={handleLoadMore}
+            >load more</button>
 
         </>
     );

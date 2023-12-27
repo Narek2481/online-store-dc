@@ -1,0 +1,26 @@
+import {AxiosResponse} from "axios";
+import $api, {URL} from "./index";
+import {IOrderResponse} from "../common/types/interfaces";
+
+
+
+export async function getOrders() {
+    try {
+        const token: string = `Bearer ${localStorage.getItem("token")}`
+        const response: AxiosResponse = await $api.get(URL + "/orders", {
+            headers: {
+                'Authorization': token,
+                'Content-Type': 'application/json',
+            }
+        })
+
+        if (response.status !== 200) {
+            throw new Error("request failed")
+        }
+
+        return response.data as IOrderResponse[];
+    } catch (e) {
+        throw e
+    }
+
+}

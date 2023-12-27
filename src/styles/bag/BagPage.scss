@@ -1,0 +1,92 @@
+.bagContainer {
+  padding: 120px 82px;
+
+  h2 {
+    color: #323334;
+    width: 246px;
+    margin: 0 auto;
+    font-family: Roboto, sans-serif;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    padding-bottom: 50px;
+  }
+}
+
+.productContainerInBag {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 75px;
+  margin-bottom: 140px;
+}
+
+.order {
+  background: rgba(236, 235, 233, 0.70);
+  padding: 50px 30px 31px 64px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 260px;
+  .orderValue {
+    padding-bottom: 66px;
+  }
+
+  button {
+    padding: 19px;
+    width: 400px;
+    color: #FFF;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px; /* 114.286% */
+    text-transform: uppercase;
+    background: #4C8787;
+    border: none;
+    margin: 0 auto;
+  }
+}
+
+svg {
+  cursor: pointer;
+}
+
+.card {
+  justify-content: space-between;
+
+  gap: 18px;
+
+  img {
+    width: 130px;
+    height: 180px;
+  }
+
+
+}
+.cards{
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+.totalContainer {
+  padding-right: 30px;
+}
+
+.total {
+  text-align: right;
+  padding-bottom: 14px;
+  border-bottom: solid 1px #323334;
+}
+
+.totalPrice {
+  padding-top: 12px;
+  text-align: right;
+}
+
+.inBagSelect{
+  padding: 5px;
+  width: 77px;
+  height: 31px;
+}

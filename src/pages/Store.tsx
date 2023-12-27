@@ -5,7 +5,6 @@ import {PremiumMember} from "../components/store/PremiumMember";
 export const Store = () => {
     return (
         <>
-
             <Search/>
             <PremiumMember/>
             <ProductCategoryContainer/>

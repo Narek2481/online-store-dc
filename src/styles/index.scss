@@ -16,7 +16,9 @@ body{
 .flex{
   display: flex;
 }
-
+.jc-b{
+  justify-content: space-between;
+}
 .jc-center {
   justify-content: center;
 }
@@ -36,4 +38,11 @@ body{
 
 button{
   cursor: pointer;
+}
+
+select{
+  background: #F3F6FF;
+  option{
+    background: #F3F6FF;
+  }
 }

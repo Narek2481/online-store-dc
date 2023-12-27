@@ -1,6 +1,6 @@
 import "../../styles/layout/Header.scss"
 import {NavBar} from "../home/NavBar";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const links = [
     {
@@ -61,10 +61,12 @@ export const Header = () => {
                         src="/assets/images/user.svg" alt=""
                         onClick={() => navigate("/login")}
                     />
-                    <img
-                        className="header-images"
-                        src='/assets/images/basket.png' alt=""
-                    />
+                    <Link to="/shopping_bag">
+                        <img
+                            className="header-images"
+                            src='/assets/images/basket.png' alt=""
+                        />
+                    </Link>
                     <img
                         className="header-images"
                         src='/assets/images/hamburger-menu.png' alt=""

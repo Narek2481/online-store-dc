@@ -2,7 +2,7 @@ import React from 'react';
 import {RouterProvider} from "react-router-dom";
 import {router} from "./router/router";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-import {AuthContext} from "./context/AuthContext";
+import {atom} from "jotai";
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -14,12 +14,13 @@ const queryClient = new QueryClient({
 })
 
 
+export const themAtom = atom("aaaa")
+
+
 function App() {
     return (
         <QueryClientProvider client={queryClient}>
-            <AuthContext>
-                <RouterProvider router={router}/>
-            </AuthContext>
+            <RouterProvider router={router}/>
         </QueryClientProvider>
     );
 }

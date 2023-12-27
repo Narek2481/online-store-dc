@@ -11,7 +11,8 @@ interface UniversalProductsProps {
     price?: number;
     id?: string;
     where?: "BEDROOM" | "RATING";
-    categoryId?: string
+    categoryId?: string;
+    classNameForProps?:string
 }
 
 
@@ -23,18 +24,20 @@ export const UniversalProducts: FC<UniversalProductsProps> = (
         price,
         id,
         where,
-        categoryId
+        categoryId,
+        classNameForProps
+
     }
 ) => {
     const className = where === "RATING" ? "rating" : "bedroom";
     const navigate = useNavigate()
     return (
         <div
-            className={`product ${className}Small`}
+            className={`product ${className}Small ${classNameForProps ? classNameForProps:""}`}
             key={id}
             onClick={!(where === "RATING" || where === "BEDROOM") ?
                 () => navigate("/store/" + id) :
-                () => navigate("/store/" + id + "/" + categoryId)}
+                () => navigate("/store/" + id + (categoryId!==undefined ? "/" + categoryId:""))}
         >
             <img src={img} alt=""/>
             <div>

@@ -62,7 +62,6 @@ export const ProductBody = () => {
         navigate("/shopping_bag")
     }
 
-    console.log(images[0])
     return (
         <>
             <div className="oneProduct">

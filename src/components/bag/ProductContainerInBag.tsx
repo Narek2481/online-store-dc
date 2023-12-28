@@ -21,7 +21,6 @@ export const ProductContainerInBag = () => {
         setOrderValue(0)
         if (bagInfo){
             bagInfo.map(elem => {
-                console.log((elem.orderItems.price),(+elem.orderItems.quantity))
                 setOrderValue(prevState => +prevState+(+elem.orderItems.price)*(+elem.orderItems.quantity))
                 return elem
             })

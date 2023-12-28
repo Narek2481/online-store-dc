@@ -17,7 +17,6 @@ export const ProductPage = () => {
             setProducts(product)
         }
     }, [setProducts, categoryId, data]);
-    console.log(products)
     return (
         <div className="productMore">
             <div className="flex">

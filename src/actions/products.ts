@@ -41,11 +41,10 @@ export  async function productsCount(count:number) {
 
 export  async function productsGetById(id:string) {
     try {
-        console.log(id)
         const response:AxiosResponse = await $api.get(URL+`/products/${id}` )
-        // if(response.status !== 200){
-        //     throw new Error("request failed")
-        // }
+        if(response.status !== 200){
+            throw new Error("request failed")
+        }
 
         return response.data as IProduct;
     }catch (e){

@@ -1,9 +1,10 @@
 .categoriesBody {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
   padding: 72px;
-  img{
+
+  img {
     width: 100%;
     max-width: 306px;
     margin: 0 auto;

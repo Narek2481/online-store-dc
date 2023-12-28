@@ -17,7 +17,6 @@ export const ProductCart: FC<ProductCartProps> = memo(({id, count}) => {
     const [selectes, setSelectes] = useState<any[]>()
     useEffect(() => {
         if (!!data && data.countInStock) {
-            console.log(data.countInStock)
             setSelectes([...Array(data.countInStock)])
         }
     }, [data])

@@ -10,7 +10,7 @@ interface ProductCartProps {
 }
 
 
-export const ProductCart: FC<ProductCartProps> = memo(({id, count, price}) => {
+export const ProductCart: FC<ProductCartProps> = memo(({id, count}) => {
     const [bagInfo, setBegInfo] = useAtom(bagAtom);
     const {data} = useProductById(id)
     const [value, setValue] = useState(String(count))
@@ -60,7 +60,6 @@ export const ProductCart: FC<ProductCartProps> = memo(({id, count, price}) => {
                     viewBox="0 0 18 18"
                     fill="none"
                     onClick={() => {
-                        // @ts-ignore
                         setBegInfo(bagInfo.filter((value) => value.orderItems.product !== id))
                         localStorage.setItem("bag", JSON.stringify(bagInfo.filter((value) => value.orderItems.product !== id)))
                     }}

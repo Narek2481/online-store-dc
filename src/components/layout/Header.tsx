@@ -49,7 +49,7 @@ const links = [
 export const Header = () => {
     const navigate = useNavigate()
     const {auth, setAuth} = useAuthAtom()
-
+    
 
     return (
         <>
@@ -60,18 +60,16 @@ export const Header = () => {
                 </div>
 
                 <div className="flex jc-end ai-center gap-1">
-
-                        <img
-                            className="header-images"
-                            src="/assets/images/user.svg" alt=""
-                            onClick={() => {
-                                if (auth) {
-                                    setAuth(null)
-                                }
-                                navigate("/login")
-                            }}
-                        />
-
+                    <img
+                        className="header-images"
+                        src="/assets/images/user.svg" alt=""
+                        onClick={() => {
+                            if (auth) {
+                                setAuth(null)
+                            }
+                            navigate("/login")
+                        }}
+                    />
                     <Link to="/shopping_bag">
                         <img
                             className="header-images"

@@ -1,14 +1,21 @@
 .topRating {
-  padding: 0px 72px 94px ;
+  padding: 0 72px 94px;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+
+  .product {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    max-width: 400px;
+  }
 }
 
-.Rate{
+.Rate {
   padding: 94px 0 50px 74px;
   color: #323334;
-  font-family: Roboto,sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 34px;
   font-style: normal;
   font-weight: 700;

@@ -71,13 +71,12 @@ export const ProductBody = () => {
                     <div className="imagesContainer">
                         {
                             images.length > 0 && images.map((elem: string) => {
-                                if (elem) {
+
                                     return <img
                                         src={elem} alt=""
                                         key={Date.now() + Math.random()}
                                         className="images"
                                     />
-                                }
                             })
                         }
                     </div>

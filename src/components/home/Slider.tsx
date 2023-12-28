@@ -28,6 +28,7 @@ export const Slider = () => {
             <Carousel
                 autoPlay={true}
                 infiniteLoop={true}
+                transitionTime={500}
                 showArrows={true}
                 showStatus={false}
                 showThumbs={false}

@@ -11,7 +11,7 @@ interface ProductCartProps {
 
 
 export const ProductCart: FC<ProductCartProps> = memo(({id, count, price}) => {
-    const [bagInfo, setBegInfo ] = useAtom(bagAtom);
+    const [bagInfo, setBegInfo] = useAtom(bagAtom);
     const {data} = useProductById(id)
     const [value, setValue] = useState(String(count))
     const [selectes, setSelectes] = useState<any[]>()
@@ -33,22 +33,19 @@ export const ProductCart: FC<ProductCartProps> = memo(({id, count, price}) => {
                         value={value}
                         onChange={({target}) => {
                             setValue(target.value)
-                            if (setBegInfo) {
-                                const newState = bagInfo.map(elem => {
-                                    if (elem.orderItems.product === id) {
-                                        return {
-                                            orderItems: {
-                                                ...elem.orderItems,
-                                                quantity: target.value
-                                            }
+                            const newState = bagInfo.map(elem => {
+                                if (elem.orderItems.product === id) {
+                                    return {
+                                        orderItems: {
+                                            ...elem.orderItems,
+                                            quantity: target.value
                                         }
                                     }
-                                    return elem
-                                })
-                                // @ts-ignore
-                                setBegInfo(newState)
-                                localStorage.setItem("bag", JSON.stringify(newState))
-                            }
+                                }
+                                return elem
+                            })
+                            setBegInfo(newState)
+                            localStorage.setItem("bag", JSON.stringify(newState))
                         }}
                     >
                         {!!selectes && selectes.map((_, index) => {
@@ -65,7 +62,7 @@ export const ProductCart: FC<ProductCartProps> = memo(({id, count, price}) => {
                     onClick={() => {
                         // @ts-ignore
                         setBegInfo(bagInfo.filter((value) => value.orderItems.product !== id))
-                        localStorage.setItem("bag",JSON.stringify(bagInfo.filter((value) => value.orderItems.product !== id)))
+                        localStorage.setItem("bag", JSON.stringify(bagInfo.filter((value) => value.orderItems.product !== id)))
                     }}
                 >
                     <path d="M1 1L17.3167 17.3167" stroke="#323334"/>

@@ -66,12 +66,12 @@ export const ProductCategoryContainer = () => {
                     }
                 </div>
             </div>
-            <button
-                className="topRatingButton"
-                // onClick={handleLoadMore}
-                // style={{display: data?.length === topData?.length ? "none" : ""}}
-            >load more
-            </button>
+            {/*<button*/}
+            {/*    className="topRatingButton"*/}
+            {/*    // onClick={handleLoadMore}*/}
+            {/*    // style={{display: data?.length === topData?.length ? "none" : ""}}*/}
+            {/*>load more*/}
+            {/*</button>*/}
         </>
     );
 };

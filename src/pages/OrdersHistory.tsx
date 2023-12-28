@@ -6,7 +6,6 @@ export const OrdersHistory = () => {
     const {data} = useGetOrders()
 
 
-    console.log(data)
     return (
         <div className="orderHistory">
             {

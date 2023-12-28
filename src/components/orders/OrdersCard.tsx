@@ -12,7 +12,6 @@ interface OrdersCardProps {
 
 export const OrdersCard: FC<OrdersCardProps> = memo(({product}) => {
     const {image, price, name} = product
-    console.log(image)
     return (
         <div className="flex card ">
             <img src={image} alt=""/>

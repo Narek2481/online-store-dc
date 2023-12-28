@@ -6,36 +6,38 @@ import {useNavigate} from "react-router-dom";
 import {useCreateOrder} from "../../common/hooks/useCreateOrder";
 import {IProductForOrder} from "../../common/types/interfaces";
 import {useAuthAtom} from "../../common/hooks/useAuthAtom";
-import {useBagAtom} from "../../common/hooks/useBagAtom";
+import {useAtom} from "jotai";
+import {bagAtom} from "../../context/atom";
 
 
 export const ProductContainerInBag = () => {
     const navigate = useNavigate()
     const {auth:token} = useAuthAtom()
-    const {bagInfo:inBag} = useBagAtom()
+    const [bagInfo,setBegInfo] = useAtom(bagAtom);
     const [orderValue, setOrderValue] = useState<number>(0)
     const {data} = useFeatured()
     const {mutateAsync} = useCreateOrder()
     useEffect(() => {
         setOrderValue(0)
-        if (inBag){
-            inBag.map(elem => {
+        if (bagInfo){
+            bagInfo.map(elem => {
                 console.log((elem.orderItems.price),(+elem.orderItems.quantity))
                 setOrderValue(prevState => +prevState+(+elem.orderItems.price)*(+elem.orderItems.quantity))
                 return elem
             })
         }
-    }, [inBag]);
+    }, [bagInfo]);
 
     const chackoutHandle = () => {
         if (!!token) {
-                mutateAsync({orderItems:inBag.map(elem => {
+                mutateAsync({orderItems:bagInfo.map(elem => {
                         return {
                             product:elem.orderItems.product,
                             quantity:elem.orderItems.quantity
                         }
                     })} as IProductForOrder)
-
+            setBegInfo([])
+            localStorage.removeItem("bag")
             return navigate("/orders")
         }
         return navigate("/login")
@@ -46,7 +48,7 @@ export const ProductContainerInBag = () => {
         <>
             <div className="productContainerInBag">
                 <div className="cards">
-                    {!!inBag && inBag.length > 0 ? inBag?.map(elem => (
+                    { bagInfo?.length > 0 ? bagInfo?.map((elem) => (
                         <Fragment key={elem.orderItems.product + Date.now()}>
                             <ProductCart
                                 id={elem.orderItems.product}

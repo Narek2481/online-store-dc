@@ -1,6 +1,6 @@
 import {atom} from "jotai";
 
-export interface bagInfo {
+export interface BagInfo {
     orderItems: { quantity: string; product: string, price: string }
 }
 
@@ -8,4 +8,4 @@ export interface bagInfo {
 
 export const  authAtom =  atom<null | string >(localStorage.getItem("token") || null)
 
-export const bagAtom = atom<bagInfo[]>(JSON.parse(localStorage.getItem("bag")||JSON.stringify([])))
+export const bagAtom = atom<BagInfo[]>([])

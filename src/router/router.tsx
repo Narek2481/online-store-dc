@@ -9,6 +9,7 @@ import {ProductPage} from "../pages/ProductPage";
 import {BagPage} from "../pages/BagPage";
 import {StoreRedirect} from "../pages/StoreRedirect";
 import {OrdersHistory} from "../pages/OrdersHistory";
+import {PrivetForLogin} from "./Privet";
 
 
 export const router = createBrowserRouter([
@@ -32,11 +33,19 @@ export const router = createBrowserRouter([
             },
             {
                 path: "login",
-                element: <Login/>,
+                element: (
+                    <PrivetForLogin>
+                        <Login/>
+                    </PrivetForLogin>
+                ),
             },
             {
                 path: "registration",
-                element: <Registration/>
+                element: (
+                    <PrivetForLogin>
+                        <Registration/>
+                    </PrivetForLogin>
+                )
             },
             {
                 path: "store",

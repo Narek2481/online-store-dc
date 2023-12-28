@@ -1,6 +1,7 @@
 import {FC, memo, useEffect, useState} from "react";
 import {useProductById} from "../../common/hooks/useProductById";
-import {useBagAtom} from "../../common/hooks/useBagAtom";
+import {useAtom} from "jotai";
+import {bagAtom} from "../../context/atom";
 
 interface ProductCartProps {
     count: string;
@@ -10,7 +11,7 @@ interface ProductCartProps {
 
 
 export const ProductCart: FC<ProductCartProps> = memo(({id, count, price}) => {
-    const {setBegInfo, bagInfo} = useBagAtom()
+    const [bagInfo, setBegInfo ] = useAtom(bagAtom);
     const {data} = useProductById(id)
     const [value, setValue] = useState(String(count))
     const [selectes, setSelectes] = useState<any[]>()

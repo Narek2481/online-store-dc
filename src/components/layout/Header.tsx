@@ -1,6 +1,7 @@
 import "../../styles/layout/Header.scss"
 import {NavBar} from "../home/NavBar";
 import {Link, useNavigate} from "react-router-dom";
+import {useAuthAtom} from "../../common/hooks/useAuthAtom";
 
 const links = [
     {
@@ -47,6 +48,9 @@ const links = [
 
 export const Header = () => {
     const navigate = useNavigate()
+    const {auth, setAuth} = useAuthAtom()
+
+
     return (
         <>
             <div className="header-container">
@@ -56,11 +60,18 @@ export const Header = () => {
                 </div>
 
                 <div className="flex jc-end ai-center gap-1">
-                    <img
-                        className="header-images"
-                        src="/assets/images/user.svg" alt=""
-                        onClick={() => navigate("/login")}
-                    />
+
+                        <img
+                            className="header-images"
+                            src="/assets/images/user.svg" alt=""
+                            onClick={() => {
+                                if (auth) {
+                                    setAuth(null)
+                                }
+                                navigate("/login")
+                            }}
+                        />
+
                     <Link to="/shopping_bag">
                         <img
                             className="header-images"

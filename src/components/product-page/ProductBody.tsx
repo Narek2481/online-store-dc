@@ -1,11 +1,12 @@
 import {useNavigate, useParams} from "react-router-dom";
 import {useProductById} from "../../common/hooks/useProductById";
 import {useEffect, useState} from "react";
-import {useBagAtom} from "../../common/hooks/useBagAtom";
+import {useAtom} from "jotai";
+import {bagAtom} from "../../context/atom";
 
 export const ProductBody = () => {
     const navigate = useNavigate()
-    const {bagInfo,setBegInfo} = useBagAtom()
+    const [bagInfo, setBegInfo] = useAtom(bagAtom);
     const {id} = useParams()
     const {data} = useProductById(id as string)
     const [images, setImages] = useState<any[]>([])
@@ -27,16 +28,36 @@ export const ProductBody = () => {
 
     const addToCard = () => {
         if (id && data) {
-            const newState = [...bagInfo,{
-                orderItems: {
-                    product: id,
-                    price: String(data.price),
-                    quantity: valueSelect === "COUNT" ? "1" : String(valueSelect)
+            let coincidence: boolean = false
+
+
+            const newState = bagInfo.map((elem) => {
+                if (elem.orderItems.product === id) {
+                    coincidence = true
+                    let quantity =  Number(elem.orderItems.quantity)
+                    let value = valueSelect === "COUNT" ? 1 : valueSelect
+                    quantity+= value as number
+                    elem.orderItems.quantity =  String(quantity)
                 }
-            }]
-            // @ts-ignore
-            setBegInfo(newState)
-            localStorage.setItem("bag",JSON.stringify(newState))
+                return elem
+            })
+
+            if (coincidence) {
+                setBegInfo(newState)
+                localStorage.setItem("bag", JSON.stringify(newState))
+            }else {
+                newState.push({
+                    orderItems: {
+                        product: id,
+                        price: String(data.price),
+                        quantity: valueSelect === "COUNT" ? "1" : String(valueSelect)
+                    }
+                })
+                setBegInfo(newState)
+                localStorage.setItem("bag",JSON.stringify(newState))
+            }
+
+
         }
         navigate("/shopping_bag")
     }
@@ -49,11 +70,11 @@ export const ProductBody = () => {
                     {!!data && <img className="rootImage" src={data.image} alt=""/>}
                     <div className="imagesContainer">
                         {
-                            images.length > 0 && images.map((elem:string) => {
+                            images.length > 0 && images.map((elem: string) => {
                                 if (elem) {
                                     return <img
                                         src={elem} alt=""
-                                        key={Date.now()+Math.random()}
+                                        key={Date.now() + Math.random()}
                                         className="images"
                                     />
                                 }

@@ -34,7 +34,7 @@ export const ProductBody = () => {
                     coincidence = true
                     let quantity =  Number(elem.orderItems.quantity)
                     let value = valueSelect === "COUNT" ? 1 : valueSelect
-                    quantity+= value as number
+                    quantity= value as number
                     elem.orderItems.quantity =  String(quantity)
                 }
                 return elem

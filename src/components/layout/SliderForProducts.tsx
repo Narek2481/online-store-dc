@@ -35,7 +35,7 @@ export const SliderForProducts: FC<MyCarouselProps> = ({products}) => {
         <div>
             <Slider {...settings} >
                 {products.map((elem) => {
-                    const categoryId:string =  String(elem.category)
+                    const categoryId:string =  String(elem.category._id)
                     return (
                         <Fragment key={products.indexOf(elem) + elem.id}>
                             <UniversalProducts

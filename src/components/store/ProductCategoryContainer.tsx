@@ -24,7 +24,6 @@ export const ProductCategoryContainer = () => {
     }, [isProduct, setProductsForId, products, id])
 
 
-
     if (isCategory || isCategory) {
         return <Loader/>
     }

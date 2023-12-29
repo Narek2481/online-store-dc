@@ -8,6 +8,6 @@ export const useLogin = (success: Function) => {
         mutationFn:  (body:ILogin) => {
            return  loginSubmit(body)
         },
-        onSuccess: (data) => success(data.token)
+        onSuccess: (data) => success(data.token,data.userID)
     })
 };

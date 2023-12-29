@@ -3,7 +3,7 @@ import {AxiosResponse} from "axios";
 import {ILogin} from "../common/types/interfaces";
 
 interface loginResponse {
-    user:string;
+    userID:string;
     token:string
 }
 

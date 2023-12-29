@@ -51,24 +51,24 @@ export interface IProductForOrder {
 
 
 export  interface IOrderResponse {
-    orderItems: {
-            _id: string,
-            quantity: string,
-            product: IProduct,
+    orderItems?: {
+            _id?: string,
+            quantity?: string,
+            product?: IProduct,
         }[]
     ,
-    status: string,
-    _id: string,
-    shippingAddress1: string,
-    city: string
-    zip: string
-    country: string
-    phone: string,
-    totalPrice: string,
-    user: {
-        _id: string,
-        name: string,
-        id: string
+    status?: string,
+    _id?: string,
+    shippingAddress1?: string,
+    city?: string
+    zip?: string
+    country?: string
+    phone?: string,
+    totalPrice?: string,
+    user?: {
+        _id?: string,
+        name?: string,
+        id?: string
     },
-    id: string
+    id?: string
 }

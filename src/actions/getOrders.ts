@@ -1,12 +1,12 @@
 import {AxiosResponse} from "axios";
 import $api, {URL} from "./index";
-import {IOrderResponse} from "../common/types/interfaces";
 
 
 
 export async function getOrders() {
     try {
         const token: string = `Bearer ${localStorage.getItem("token")}`
+
         const response: AxiosResponse = await $api.get(URL + "/orders", {
             headers: {
                 'Authorization': token,
@@ -18,7 +18,7 @@ export async function getOrders() {
             throw new Error("request failed")
         }
 
-        return response.data as IOrderResponse[];
+        return response.data as any[];
     } catch (e) {
         throw e
     }

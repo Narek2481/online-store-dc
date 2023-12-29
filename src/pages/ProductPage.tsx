@@ -11,12 +11,14 @@ export const ProductPage = () => {
     const {categoryId} = useParams()
 
     const {data} = useProducts()
+
     useLayoutEffect(() => {
         if (!!data) {
             const product = data.filter(elem => elem.category._id === categoryId)
             setProducts(product)
         }
     }, [setProducts, categoryId, data]);
+
     return (
         <div className="productMore">
             <div className="flex">

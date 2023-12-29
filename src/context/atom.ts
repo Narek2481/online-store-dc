@@ -5,7 +5,7 @@ export interface BagInfo {
 }
 
 
-
+export const  userIdAtom =  atom<null | string >(localStorage.getItem("userId") || null)
 export const  authAtom =  atom<null | string >(localStorage.getItem("token") || null)
 
 export const bagAtom = atom<BagInfo[]>([])

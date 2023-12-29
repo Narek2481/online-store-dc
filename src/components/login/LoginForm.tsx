@@ -4,6 +4,8 @@ import {Link, useNavigate} from "react-router-dom";
 import {useLogin} from "../../common/hooks/useLogin";
 
 import {useAuthAtom} from "../../common/hooks/useAuthAtom";
+import {useAtom} from "jotai";
+import {userIdAtom} from "../../context/atom";
 
 interface LoginFormComponent {
     email: string;
@@ -23,10 +25,14 @@ const initialValues = {
 export const LoginForm = () => {
     const navigate = useNavigate()
     const {setAuth} = useAuthAtom()
-    const succcessLogin = (token:string) => {
+    const setUserId = useAtom(userIdAtom)[1]
+    const succcessLogin = (token:string,userId:string) => {
         navigate("/home")
         if (setAuth){
             setAuth(token)
+            setUserId(userId)
+            console.log(userId)
+            localStorage.setItem("userId",userId)
         }
     }
     const {mutate:login} = useLogin(succcessLogin)

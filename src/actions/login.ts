@@ -8,7 +8,7 @@ interface loginResponse {
 }
 
 
-export default async function loginSubmit(body:ILogin,success:Function) {
+export default async function loginSubmit(body:ILogin) {
     try {
         const response:AxiosResponse<loginResponse> = await $api.post(URL+"/users/login", {
             ...body

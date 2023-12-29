@@ -29,8 +29,6 @@ export const ProductBody = () => {
     const addToCard = () => {
         if (id && data) {
             let coincidence: boolean = false
-
-
             const newState = bagInfo.map((elem) => {
                 if (elem.orderItems.product === id) {
                     coincidence = true
@@ -41,7 +39,6 @@ export const ProductBody = () => {
                 }
                 return elem
             })
-
             if (coincidence) {
                 setBegInfo(newState)
                 localStorage.setItem("bag", JSON.stringify(newState))

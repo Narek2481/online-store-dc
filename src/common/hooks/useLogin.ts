@@ -6,7 +6,7 @@ export const useLogin = (success: Function) => {
     return useMutation({
         mutationKey: ["login"],
         mutationFn:  (body:ILogin) => {
-           return  loginSubmit(body,success)
+           return  loginSubmit(body)
         },
         onSuccess: (data) => success(data.token)
     })

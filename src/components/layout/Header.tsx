@@ -2,6 +2,8 @@ import "../../styles/layout/Header.scss"
 import {NavBar} from "../home/NavBar";
 import {Link, useNavigate} from "react-router-dom";
 import {useAuthAtom} from "../../common/hooks/useAuthAtom";
+import {useAtom} from "jotai";
+import {bagAtom} from "../../context/atom";
 
 const links = [
     {
@@ -49,7 +51,7 @@ const links = [
 export const Header = () => {
     const navigate = useNavigate()
     const {auth, setAuth} = useAuthAtom()
-    
+    const [bagInfo] = useAtom(bagAtom)
 
     return (
         <>
@@ -66,16 +68,29 @@ export const Header = () => {
                         onClick={() => {
                             if (auth) {
                                 setAuth(null)
+                                localStorage.removeItem("token")
                             }
+
                             navigate("/login")
                         }}
                     />
                     <Link to="/shopping_bag">
+
                         <img
                             className="header-images"
                             src='/assets/images/basket.png' alt=""
                         />
                     </Link>
+                    {
+                        bagInfo.length > 0 &&
+                        <Link
+                            to="/shopping_bag"
+                            className="bagInfoLength"
+
+                        >
+                            {bagInfo.length}
+                        </Link>
+                    }
                     <img
                         className="header-images"
                         src='/assets/images/hamburger-menu.png' alt=""

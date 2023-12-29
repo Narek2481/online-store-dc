@@ -20,3 +20,16 @@
 .header-images:first-child {
     cursor: pointer;
 }
+
+
+.bagInfoLength{
+  background: red;
+  color: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
